@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Plus, X, Sparkles } from 'lucide-react'
+import { Plus, X, Sparkles, TrendingUp } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { Condition } from '@/types/trading'
 
@@ -176,6 +176,24 @@ export function ConditionBuilder() {
           </div>
         </div>
       )}
+
+      {/* Apply Filters Button */}
+      <div className="mt-4 pt-3 border-t">
+        <button
+          className={cn(
+            "w-full flex items-center justify-center gap-3 rounded-lg px-6 py-3",
+            "bg-gradient-to-r from-blue-600 to-indigo-700 text-white",
+            "font-bold text-base shadow-xl",
+            "hover:from-blue-700 hover:to-indigo-800",
+            "hover:shadow-2xl hover:scale-[1.02]",
+            "transition-all duration-200",
+            "border-2 border-blue-400/30"
+          )}
+        >
+          <TrendingUp className="h-5 w-5" />
+          APPLY FILTERS
+        </button>
+      </div>
     </div>
   )
 }

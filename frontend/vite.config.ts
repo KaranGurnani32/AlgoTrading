@@ -4,12 +4,12 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react(), tailwindcss(),],
-  base: '/AlgoTrading/', // Replace with your actual repo name
+  base: command === 'build' ? '/AlgoTrading/' : '/', // Use /AlgoTrading/ for GitHub Pages, / for dev
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-})
+}))
